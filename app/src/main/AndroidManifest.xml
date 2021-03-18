@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.implicitintentsreceiver">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/icono_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/icono_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ImplicitIntentsReceiver">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <!-- acciones de vista con un INTENT -->
+                <action android:name="android.intent.action.VIEW" />
+                <!-- para realizar llamadas a cualquier intent implicito  -->
+                <category android:name="android.intent.category.DEFAULT" />
+                <!-- para las solicitudes de links a webpages, emails u otros recursos -->
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- URI que contiene el esquema http y el hostname hacia el developer.android.com si en el intent
+                 se pusiera otro url no se abrirá este intent-->
+                <data android:scheme="http" android:host="developer.android.com" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
